@@ -1,7 +1,8 @@
 
 import {useState, useEffect} from "react"
+import {BrowserRouter,Routes,Route, Link} from "react-router-dom"
 
-function DisplaySellers(){
+function Sellers(){
 
     let [posts, addPosts]=useState([])
     let [selID, deleteSeller] = useState([""])
@@ -65,9 +66,12 @@ function DisplaySellers(){
                             )
                             )}
                     </table>
+                    <div>
+                        <Link to="/addseller"><button>Add Seller</button></Link>
+                    </div>
             </div>
         </>
     )
 }
 
-export default DisplaySellers
+export default Sellers

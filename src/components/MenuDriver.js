@@ -1,8 +1,12 @@
 
 import {BrowserRouter,Routes,Route, Link} from "react-router-dom"
 import {useState, useEffect} from "react"
-import DisplaySellers from "./Sellers"
 import Home from "./Home"
+import Sellers from "./Sellers"
+import Properties from "./Properties"
+import Buyers from "./Buyers"
+import AddSeller from "./AddSeller"
+
 
 function Routing(){
 
@@ -16,17 +20,17 @@ function Routing(){
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/sellers">Sellers</Link></li>
-                    {/* <li><Link to="/buyers">Buyers</Link></li>
-                    <li><Link to="/properties">Properties</Link></li> */}
+                    <li><Link to="/buyers">Buyers</Link></li>
+                    <li><Link to="/properties">Properties</Link></li>
                 </ul>
             </nav>
 
-                    <DisplaySellers/>
             <Routes>
-                <Route path="/" elements={<Home/>}></Route>
-                <Route path="/sellers" elements={<DisplaySellers/>}></Route>
-                {/* <Route path="/buyers" elements={<Buyers/>}></Route>
-                <Route path="/properties" elements={<Properties/>}></Route> */}
+                <Route path="/" element={<Home/>}></Route>
+                <Route path="/sellers" element={<Sellers/>}></Route>
+                <Route path="/buyers" element={<Buyers/>}></Route>
+                <Route path="/properties" element={<Properties/>}></Route>
+                <Route path="/addseller" element={<AddSeller/>}></Route>
             </Routes>
             
             
