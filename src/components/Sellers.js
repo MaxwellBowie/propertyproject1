@@ -47,12 +47,12 @@ function Sellers(){
     return(
         <>
                 <div>
-                    <table>
+                    <table class="table table-striped table-dark">
                         <thead>
                             <tr>
-                                <th>Fname</th>
-                                <th>Sirname</th>
-                                <th>Delete</th>
+                                <th>Firstname</th>
+                                <th>Surname</th>
+                                <th></th>
                             </tr>
                         </thead>
                             {posts.map((post)=>(

@@ -16,19 +16,6 @@
       "surname": "Jones"
     },
     {
-      "id": 4,
-      "firstName": "Karen",
-      "surname": "Slater"
-    },
-    {
-      "id": 5,
-      "firstName": "Jade",
-      "surname": "Huang",
-      "address": "China",
-      "postcode": "",
-      "phone": ""
-    },
-    {
       "firstName": "Andy",
       "surname": "Smith",
       "address": "",
