@@ -25,7 +25,33 @@ function AddSeller(){
 
     return(
         <>
-        First Name:<input type="text" id="fname"/>
+
+        <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">First Name</label>
+            <input type="text" class="form-control" id="fname" placeholder="Enter First name"/>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Second Name</label>
+            <input type="text" class="form-control" id="sname" placeholder="Enter Second name"/>
+        </div>
+        <div class="form-group">
+            <label for="telephone">Telephone</label>
+            <input type="text" class="form-control" id="tel" placeholder="Enter Telephone number"/>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" placeholder="Enter address"/>
+        </div>
+        <div class="form-group">
+            <label for="postcode">Postcode</label>
+            <input type="text" class="form-control" id="postcode" placeholder="Enter postcode"/>
+        </div>
+       
+        <button type="submit" class="btn btn-primary" onClick={saveData}>Save</button>
+        </form>
+
+        {/* First Name:<input type="text" id="fname"/>
         <br/>
         Surname:<input type="text" id="sname"/>
         <br/>
@@ -40,7 +66,7 @@ function AddSeller(){
             type="button"
             id="btn1"
             value="Save"
-            onClick={saveData}></input>
+            onClick={saveData}></input> */}
         </>
     )
 }

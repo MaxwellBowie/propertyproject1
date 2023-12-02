@@ -4,11 +4,9 @@ import MenuDriver from './components/MenuDriver'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       <MenuDriver/>
-      </header>
-    </div>
+      <>
+        <MenuDriver/>
+      </>
   );
 }
 
