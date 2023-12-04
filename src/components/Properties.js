@@ -1,6 +1,15 @@
 function Properties(){
 
-    return(<>Properties</>)
+
+
+
+
+    return(
+    <>
+    Properties
+
+    
+    </>)
 }
 
 export default Properties
