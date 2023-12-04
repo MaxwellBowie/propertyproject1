@@ -48,7 +48,7 @@ function Sellers(){
         <div  class="container"> <h2>Sellers</h2></div>
             <div class="container bg-light p-3 rounded">
             <div class="card">
-                    <h5 class="card-header bg-dark  text-light">Add a Seller</h5>
+                    <h5 class="card-header bg-dark text-light">Add a Seller</h5>
                     <div class="card-body">
                         <div class="d-flex flex-row-reverse">
                             <Link to="/addseller"><button class="btn btn-success">Add Seller</button></Link>

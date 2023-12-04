@@ -2,7 +2,6 @@
 import {BrowserRouter,Routes,Route, Link} from "react-router-dom"
 function NavBar(){
     return(
-        
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
                     <a class="navbar-brand">QA Property</a>
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -19,7 +18,6 @@ function NavBar(){
                         </ul>
                     </div>
             </nav>
-        
     )
 
 }
