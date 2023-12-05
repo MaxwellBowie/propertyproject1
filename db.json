@@ -1,42 +1,6 @@
 {
   "seller": [
     {
-      "id": 1,
-      "firstName": "John",
-      "surname": "Doe"
-    },
-    {
-      "id": 2,
-      "firstName": "Anna",
-      "surname": "Smith"
-    },
-    {
-      "id": 3,
-      "firstName": "Peter",
-      "surname": "Jones"
-    },
-    {
-      "id": 4,
-      "firstName": "Karen",
-      "surname": "Slater"
-    },
-    {
-      "id": 5,
-      "firstName": "Jade",
-      "surname": "Huang",
-      "address": "China",
-      "postcode": "",
-      "phone": ""
-    },
-    {
-      "firstName": "Andy",
-      "surname": "Smith",
-      "address": "",
-      "postcode": "",
-      "phone": "",
-      "id": 7
-    },
-    {
       "firstName": "Stephanie ",
       "surname": "Hill",
       "address": "brecon Town, Brecon",
@@ -59,6 +23,14 @@
       "postcode": "CF1 1AA",
       "phone": "1234234",
       "id": 10
+    },
+    {
+      "firstName": "Max",
+      "surname": "Bowie",
+      "phone": "07885979613",
+      "address": "maxgwb",
+      "postcode": "G61 4AD",
+      "id": 11
     }
   ],
   "property": [

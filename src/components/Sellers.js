@@ -34,7 +34,6 @@ function Sellers(){
     let ref=fetch(`http://localhost:3000/seller/${selID}`,{
         method:"Delete",
     })
-        // ref.then((x)=> alert("Are you sure youy want to delete this Seller?"))
     }
 
     function actvDel(ref){

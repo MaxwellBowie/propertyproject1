@@ -7,16 +7,14 @@ import Properties from "./Properties"
 import Buyers from "./Buyers"
 import AddSeller from "./AddSeller"
 import NavBar from "./NavBar"
+import PropertySearch from "./PropertySearch"
+
 
 
 
 function Routing(){
-
-
     return(
         <>
-
-    
         <BrowserRouter>
         <NavBar/>
         <br/>
@@ -27,14 +25,12 @@ function Routing(){
                     <Route path="/buyers" element={<Buyers/>}></Route>
                     <Route path="/properties" element={<Properties/>}></Route>
                     <Route path="/addseller" element={<AddSeller/>}></Route>
+                    <Route path="/searchproperty" element={<PropertySearch/>}></Route>
+                    {/* <Route path="/filtered" element={<FilteredProperty/>}></Route> */}
                 </Routes>
-                
         </div>
-
         </BrowserRouter>
-        
         </>
-
     )
 }
 
