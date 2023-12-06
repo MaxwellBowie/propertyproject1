@@ -1,5 +1,7 @@
 import React, {useRef} from "react";
 import Properties from "./Properties";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBath, faBed, faHouse, faTree, faDollarSign} from '@fortawesome/free-solid-svg-icons'
 
 
 function PropertySearch(props){
@@ -29,7 +31,7 @@ function PropertySearch(props){
     <form>
         <div className="row">
             <div className="form-group col">
-                <label htmlFor="propertyType">Type</label>
+                <label htmlFor="propertyType"><FontAwesomeIcon icon={faHouse}/> Type</label>
                 <select className="form-select" ref={typeRef}>
                     <option value="ANY">Any</option>
                     <option value="DETACHED">Detached</option>
@@ -38,7 +40,7 @@ function PropertySearch(props){
                 </select>
             </div>
             <div className="form-group col">
-                <label htmlFor="propertyPrice">Price</label>
+                <label htmlFor="propertyPrice"><FontAwesomeIcon icon={faDollarSign}/> Price</label>
                 <select className="form-select" ref={priceRef}>
                     <option value="0">Any</option>
                     <option value="50000">Up to 50000</option>
@@ -49,7 +51,7 @@ function PropertySearch(props){
                 </select>
             </div>
             <div className="form-group col">
-                <label htmlFor="numberOfBedrooms">Bedrooms</label>
+                <label htmlFor="numberOfBedrooms"><FontAwesomeIcon icon={faBed}/> Bedrooms</label>
                 <select className="form-select" ref={bedroomRef}>
                     <option value="0">Any</option>
                     <option value="1">Minimum 1</option>
@@ -60,7 +62,7 @@ function PropertySearch(props){
                 </select>
             </div>
             <div className="form-group col">
-                <label htmlFor="numberOfBathrooms">Bathrooms</label>
+                <label htmlFor="numberOfBathrooms"><FontAwesomeIcon icon={faBath}/> Bathrooms</label>
                 <select className="form-select" ref={bathroomRef}>
                     <option value="0">Any</option>
                     <option value="1">Minimum 1</option>
@@ -69,7 +71,7 @@ function PropertySearch(props){
                 </select>
             </div>
             <div className="form-group col">
-                <label htmlFor="numberOfGardens">Garden</label>
+                <label htmlFor="numberOfGardens"><FontAwesomeIcon icon={faTree}/> Garden</label>
                 <select className="form-select" ref={gardenRef}>
                     <option value="0">Any</option>
                     <option value="1">Yes</option>

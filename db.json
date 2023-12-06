@@ -23,14 +23,6 @@
       "postcode": "CF1 1AA",
       "phone": "1234234",
       "id": 10
-    },
-    {
-      "firstName": "Max",
-      "surname": "Bowie",
-      "phone": "07885979613",
-      "address": "maxgwb",
-      "postcode": "G61 4AD",
-      "id": 11
     }
   ],
   "property": [
@@ -49,7 +41,7 @@
     },
     {
       "id": 2,
-      "address": "Somewhere House, Some City",
+      "address": "Somewhere House, City",
       "postcode": "SO1 2ME",
       "type": "APARTMENT",
       "price": 200000,
@@ -119,6 +111,18 @@
       "sellerId": 4,
       "status": "SOLD",
       "id": 8
+    },
+    {
+      "address": "35 John Stones",
+      "postcode": "GGG GGG",
+      "type": "SEMI",
+      "price": 99000,
+      "bedroom": 2,
+      "bathroom": 1,
+      "garden": 0,
+      "sellerId": 4,
+      "status": "FOR SALE",
+      "id": 9
     }
   ],
   "buyer": [

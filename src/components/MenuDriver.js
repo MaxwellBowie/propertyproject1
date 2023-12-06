@@ -9,9 +9,6 @@ import AddSeller from "./AddSeller"
 import NavBar from "./NavBar"
 import PropertySearch from "./PropertySearch"
 
-
-
-
 function Routing(){
     return(
         <>
@@ -26,7 +23,6 @@ function Routing(){
                     <Route path="/properties" element={<Properties/>}></Route>
                     <Route path="/addseller" element={<AddSeller/>}></Route>
                     <Route path="/searchproperty" element={<PropertySearch/>}></Route>
-                    {/* <Route path="/filtered" element={<FilteredProperty/>}></Route> */}
                 </Routes>
         </div>
         </BrowserRouter>

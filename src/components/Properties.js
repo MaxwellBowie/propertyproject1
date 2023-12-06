@@ -2,6 +2,8 @@ import {useState, useEffect} from "react"
 import { useReducer } from 'react';
 import PropertySearch from "./PropertySearch";
 import {BrowserRouter,Routes,Route, Link} from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBath, faBed, faHouse, faLocationDot, faTree, faBuilding, faHouseCrack, faDollarSign} from '@fortawesome/free-solid-svg-icons'
 
 function Properties(){
 
@@ -30,10 +32,41 @@ function Properties(){
         )
       };
 
+    function setBadgeColour(badgeStatus){
+        let badgeColour = ""
+        switch(badgeStatus){
+            case "SOLD":
+                badgeColour = "badge bg-warning"
+                return badgeColour
+            case "FOR SALE":
+                badgeColour = "badge bg-success"
+                return badgeColour
+            default:
+                return badgeColour
+        }
+    }
+
+    function setPropertyTypeIcon(propertyType){
+        let propertyIcon ={}
+        switch(propertyType){
+            case "DETACHED":
+                propertyIcon = faHouse
+                return propertyIcon
+            case "APARTMENT":
+                propertyIcon = faBuilding
+                return propertyIcon
+            case "SEMI":
+                propertyIcon = faHouseCrack
+                return propertyIcon
+            default:
+                return propertyIcon
+        }
+    }
+
 
     function getData(properties){
-            dispatch({ type: "SET", payload: properties });
-            setSearchResult(properties);
+        dispatch({ type: "SET", payload: properties });
+        setSearchResult(properties);
     }
 
     function done(response){  
@@ -51,9 +84,11 @@ function Properties(){
 
     return(
     <>
+
     <div  class="container"><h2>Properties</h2></div>
+    
             <div class="container bg-light p-3 rounded">
-            <div class="card">
+            <div class="card shadow-sm">
             <h5 class="card-header bg-dark text-light">Property Search</h5>
                     <div class="card-body">
                        <PropertySearch handleSearch = {handleSearch}/>
@@ -62,23 +97,27 @@ function Properties(){
             <br/>
             <div class="row">
                 {searchResult.map((post)=>(
-                    <div class="col col-3">
-                        <div class="m-2">
-                            <div class="card" style={{"width" : "16rem"}}>
+                
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="d-flex justify-content-center">
+                        <div>
+                            <div class="card shadow-sm m-2" style={{"width" : "16rem"}}>
+                            <div class="card-header bg-light text-dark">{post.address}</div>
                                 <div class="card-body">
-                                    <p class="card-text">{post.address}</p>
-                                    <p class="card-text"> {post.postcode}</p>
-                                    <p class="card-text">Type: {post.type}</p>
-                                    <p class="card-text">Bedrooms: {post.bedroom}</p>
-                                    <p class="card-text">Bathrooms: {post.bathroom}</p>
-                                    <p class="card-text">Garden: {post.garden ? "Yes" : "No"}</p>
-                                    <p class="card-text">Status: {post.status}</p>
+                                    <p class="card-text"><FontAwesomeIcon icon={setPropertyTypeIcon(post.type)}/> {post.type}</p>
+                                    <p class="card-text"><FontAwesomeIcon icon={faBed}/> {post.bedroom}</p>
+                                    <p class="card-text"><FontAwesomeIcon icon={faBath}/> {post.bathroom}</p>
+                                    <p class="card-text"><FontAwesomeIcon icon={faTree}/> {post.garden ? "Yes" : "No"}</p>
+                                    <p class="card-text"><span class={setBadgeColour(post.status)}>{post.status}</span></p>
+                                    
                                 </div>
+                            <div class="card-footer bg-light text-dark"><b>£{post.price}</b>,<br/><span class="text-muted">Offers Over</span></div>
                         </div>
                         </div>
                     </div>
-                     )
-                     )}
+                </div>
+                )
+                )}
                 </div>
             </div>
     </>)

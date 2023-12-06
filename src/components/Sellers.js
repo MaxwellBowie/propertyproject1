@@ -1,6 +1,8 @@
 
 import {useState, useEffect} from "react"
 import {BrowserRouter,Routes,Route, Link} from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhone, faLocationDot, faPerson, faCircleMinus, faPeopleGroup, faUser} from '@fortawesome/free-solid-svg-icons'
 
 function Sellers(){
 
@@ -47,7 +49,7 @@ function Sellers(){
         <div  class="container"> <h2>Sellers</h2></div>
             <div class="container bg-light p-3 rounded">
             <div class="card">
-                    <h5 class="card-header bg-dark text-light">Add a Seller</h5>
+                    <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faUser}/> Add a Seller</h5>
                     <div class="card-body">
                         <div class="d-flex flex-row-reverse">
                             <Link to="/addseller"><button class="btn btn-success">Add Seller</button></Link>
@@ -57,16 +59,17 @@ function Sellers(){
         <br/>
             <div class="row">
             <div class="col align-self-center">
-            <div class="card">
-            <h5 class="card-header bg-dark text-light">List of Sellers</h5>
-                <div class="card-body">
+            <div class="card shadow-sm">
+            <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPeopleGroup}/> List of Sellers</h5>
+                <div class="card-body shadow-sm">
+                <div class="table-responsive">
                     <table class="table table-striped text-muted">
                         <thead> 
                             <tr>
-                                <th>Firstname</th>
+                                <th><FontAwesomeIcon icon={faUser}/> Firstname</th>
                                 <th>Surname</th>
-                                <th class="w-25">Phone</th>
-                                <th class="w-25">Address</th>
+                                <th><FontAwesomeIcon icon={faPhone}/> Phone</th>
+                                <th><FontAwesomeIcon icon={faLocationDot}/> Address</th>
                                 <th>Postcode</th>
                                 <th></th>
                             </tr>
@@ -87,6 +90,7 @@ function Sellers(){
                             )}
                         </tbody>
                     </table>
+                    </div>
                  </div>   
                  </div>
             </div>
