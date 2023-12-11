@@ -6,8 +6,11 @@ import Sellers from "./Sellers"
 import Properties from "./Properties"
 import Buyers from "./Buyers"
 import AddSeller from "./AddSeller"
+import AddBuyer from "./AddBuyer"
+import AddProperty from "./AddProperty"
 import NavBar from "./NavBar"
 import PropertySearch from "./PropertySearch"
+import PropertyStatus from "./PropertyStatus"
 
 function Routing(){
     return(
@@ -22,7 +25,10 @@ function Routing(){
                     <Route path="/buyers" element={<Buyers/>}></Route>
                     <Route path="/properties" element={<Properties/>}></Route>
                     <Route path="/addseller" element={<AddSeller/>}></Route>
+                    <Route path="/addbuyer" element={<AddBuyer/>}></Route>
+                    <Route path="/addproperty" element={<AddProperty/>}></Route>
                     <Route path="/searchproperty" element={<PropertySearch/>}></Route>
+                    <Route path="/propertyStatus" element={<PropertyStatus/>}></Route>
                 </Routes>
         </div>
         </BrowserRouter>

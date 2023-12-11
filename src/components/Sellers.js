@@ -2,7 +2,7 @@
 import {useState, useEffect} from "react"
 import {BrowserRouter,Routes,Route, Link} from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhone, faLocationDot, faPerson, faCircleMinus, faPeopleGroup, faUser} from '@fortawesome/free-solid-svg-icons'
+import { faPhone, faLocationDot, faPerson, faCircleMinus, faPeopleGroup, faUser, faPen} from '@fortawesome/free-solid-svg-icons'
 
 function Sellers(){
 
@@ -29,6 +29,7 @@ function Sellers(){
             ref = fetch('http://localhost:3000/seller')
             ref.then(done)
         }
+
         deleteSeller("")
    }
 
@@ -49,7 +50,7 @@ function Sellers(){
         <div  class="container"> <h2>Sellers</h2></div>
             <div class="container bg-light p-3 rounded">
             <div class="card">
-                    <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faUser}/> Add a Seller</h5>
+                    <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPen}/> Add a Seller</h5>
                     <div class="card-body">
                         <div class="d-flex flex-row-reverse">
                             <Link to="/addseller"><button class="btn btn-success">Add Seller</button></Link>
@@ -57,7 +58,7 @@ function Sellers(){
                     </div>
             </div>
         <br/>
-            <div class="row">
+        <div class="row">
             <div class="col align-self-center">
             <div class="card shadow-sm">
             <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPeopleGroup}/> List of Sellers</h5>

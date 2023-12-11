@@ -1,7 +1,7 @@
 import React, {useRef} from "react";
 import Properties from "./Properties";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBath, faBed, faHouse, faTree, faDollarSign} from '@fortawesome/free-solid-svg-icons'
+import { faBath, faBed, faHouse, faTree, faBuilding, faHouseCrack, faPoundSign, faMagnifyingGlass, faCircleDot} from '@fortawesome/free-solid-svg-icons'
 
 
 function PropertySearch(props){
@@ -13,6 +13,7 @@ function PropertySearch(props){
     let bedroomRef = useRef()
     let gardenRef = useRef()
     let bathroomRef = useRef()
+    let statusRef = useRef()
 
     function search(){
         handleSearch({
@@ -21,6 +22,7 @@ function PropertySearch(props){
             bedroom: bedroomRef.current.value,
             garden: gardenRef.current.value,
             bathroom: bathroomRef.current.value,
+            status: statusRef.current.value
         }
         );
     }
@@ -30,7 +32,7 @@ function PropertySearch(props){
 
     <form>
         <div className="row">
-            <div className="form-group col">
+            <div className="form-group col-lg-2 col-md-6 col-sm-12 col-xs-12">
                 <label htmlFor="propertyType"><FontAwesomeIcon icon={faHouse}/> Type</label>
                 <select className="form-select" ref={typeRef}>
                     <option value="ANY">Any</option>
@@ -39,8 +41,8 @@ function PropertySearch(props){
                     <option value="APARTMENT">Apartment</option>
                 </select>
             </div>
-            <div className="form-group col">
-                <label htmlFor="propertyPrice"><FontAwesomeIcon icon={faDollarSign}/> Price</label>
+            <div className="form-group col-lg-2 col-md-6 col-sm-12 col-xs-12">
+                <label htmlFor="propertyPrice"><FontAwesomeIcon icon={faPoundSign}/> Price</label>
                 <select className="form-select" ref={priceRef}>
                     <option value="0">Any</option>
                     <option value="50000">Up to 50000</option>
@@ -50,7 +52,7 @@ function PropertySearch(props){
                     <option value="400000">Up to 400000</option>
                 </select>
             </div>
-            <div className="form-group col">
+            <div className="form-group col-lg-2 col-md-6 col-sm-12 col-xs-12">
                 <label htmlFor="numberOfBedrooms"><FontAwesomeIcon icon={faBed}/> Bedrooms</label>
                 <select className="form-select" ref={bedroomRef}>
                     <option value="0">Any</option>
@@ -61,7 +63,7 @@ function PropertySearch(props){
                     <option value="5">Minimum 5</option>
                 </select>
             </div>
-            <div className="form-group col">
+            <div className="form-group col-lg-2 col-md-6 col-sm-12 col-xs-12">
                 <label htmlFor="numberOfBathrooms"><FontAwesomeIcon icon={faBath}/> Bathrooms</label>
                 <select className="form-select" ref={bathroomRef}>
                     <option value="0">Any</option>
@@ -70,11 +72,19 @@ function PropertySearch(props){
                     <option value="3">Minimum 3</option>
                 </select>
             </div>
-            <div className="form-group col">
+            <div className="form-group col-lg-2 col-md-6 col-sm-12 col-xs-12">
                 <label htmlFor="numberOfGardens"><FontAwesomeIcon icon={faTree}/> Garden</label>
                 <select className="form-select" ref={gardenRef}>
                     <option value="0">Any</option>
                     <option value="1">Yes</option>
+                </select>
+            </div>
+            <div className="form-group col-lg-2 col-md-6 col-sm-12 col-xs-12">
+                <label htmlFor="status"><FontAwesomeIcon icon={faCircleDot}/> Status</label>
+                <select className="form-select" ref={statusRef}>
+                    <option value="ANY">Any</option>
+                    <option value="FOR SALE">FOR SALE</option>
+                    <option value="SOLD">SOLD</option>
                 </select>
             </div>
         </div>
