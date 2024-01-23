@@ -90,7 +90,7 @@ function PropertySearch(props){
         </div>
         <div className="text-end">
             <br/>
-            <button type="button" className="btn btn-primary" onClick={search}>
+            <button type="button" className="btn btn-success" onClick={search}>
                 <i className="bi bi-search"></i>&nbsp;Find Properties
             </button>
         </div>
