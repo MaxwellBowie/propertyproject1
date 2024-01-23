@@ -1,8 +1,12 @@
 import {useState, useEffect} from "react"
 import { useReducer } from 'react';
 import PropertySearch from "./PropertySearch";
-import {BrowserRouter,Routes,Route, Link} from "react-router-dom"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {BrowserRouter,Routes,Route, Link} from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
+import { faUserCircle, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { faBath, faBed, faHouse, faLocationDot, faTree, faBuilding, faHouseCrack, faDollarSign, faMagnifyingGlass, faPoundSign, faPen, faCircleDot} from '@fortawesome/free-solid-svg-icons'
 import PropertyStatus from "./PropertyStatus";
 
@@ -19,6 +23,9 @@ function Properties(){
     let [listOfProperties, dispatch] = useReducer(reducedPropertiesList, []);
     let [searchResult, setSearchResult] = useState([]);
     let [propID, withdrawProperty] = useState([""])
+    const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
     function handleSearch(searchInput){
         setSearchResult(
@@ -32,6 +39,7 @@ function Properties(){
              (Number(searchInput.price) === 0 || Number(property.price) <= Number(searchInput.price))
           )
         )
+        setShow(!show);
       };
 
     function setBadgeColour(badgeStatus){
@@ -113,6 +121,26 @@ function Properties(){
 
     return(
     <>
+      <div className="button-container">
+        <Link to={"/properties"} className="text-decoration-none">
+          {/* Bootstrap modal to search property */}
+          <Button
+                          className="w-100"
+                          variant="success" onClick={handleShow}>
+            <FontAwesomeIcon icon={faMagnifyingGlass} size="2x" /> Property Search
+          </Button>
+
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title><h5 ><FontAwesomeIcon icon={faMagnifyingGlass}/>  Property Search</h5></Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <PropertySearch handleSearch = {handleSearch}/>
+             
+            </Modal.Body>
+          </Modal>
+        </Link>
+      </div>
 
     <div  class="container"><h2>Properties</h2></div>
         <div class="container bg-light p-3 rounded">
@@ -125,10 +153,6 @@ function Properties(){
                     </div>
             </div>
             <br></br>
-            <div class="card shadow-sm">
-                <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faMagnifyingGlass}/>  Property Search</h5>
-                    <div class="card-body"><PropertySearch handleSearch = {handleSearch}/></div>
-                </div>
             <br/>
             <div class="row">
                 {searchResult.map((post)=>(
