@@ -1,53 +1,43 @@
+import React from 'react'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    useParams,
+  } from "react-router-dom";
+  import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
+  
 
-import {BrowserRouter,Routes,Route, Link} from "react-router-dom"
+class NavBar extends React.Component{
 
-
-import "./Nav.css"
-
-function NavBar(){
-    return(
-        <>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-                <div class="container-fluid">
-                    <a class="navbar-brand">QA Property</a>
-                    <div class="navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active"><Link to="/sellers">
-                                <a class="nav-link">Sellers</a>
-                                </Link></li>
-                            <li class="nav-item"><Link to="/buyers">
-                                <a class="nav-link">Buyers</a>
-                                </Link></li>
-                            <li class="nav-item"><Link to="/properties">
-                                <a class="nav-link">Properties</a>
-                            </Link></li>
-                        </ul>
+    render(){
+        return(
+            <div>
+                <div className="row">
+                    <div className="col-md-12">
+                       
+                            <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+                                <Navbar.Brand href="/">QA Property</Navbar.Brand>
+                                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                                <Navbar.Collapse id="basic-navbar-nav">
+                                    <Nav className="mr-auto">
+                                    <Nav.Link href="/properties">Property</Nav.Link>
+                                    <Nav.Link href="/sellers">Sellers</Nav.Link>
+                                    <Nav.Link href="/buyers">Buyers</Nav.Link>
+                                    
+                                    </Nav>
+                                    
+                                </Navbar.Collapse>
+                            </Navbar>
+                            <br />
+                               
+                            
+                       
                     </div>
                 </div>
-            </nav>
-
-        
-
-            
-        {/* <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid justify-content-center">
-            <div class="navbar-collapse justify-content-center">
-            <div class="navbar-nav">
-                <ul class="nav">
-                <li><a class="nav-link" href="#">Seller</a></li>
-                <li><a class="nav-link" href="#">Buyer</a></li>
-                <li><a class="nav-link">Properties</a></li>
-                </ul>
             </div>
-            </div>
-        </div>
-        </nav> */}
-
-      
-                
-
-        </>
-    )
+        )  
+    }
 }
 
-export default NavBar
+export default NavBar;
