@@ -13,8 +13,8 @@ class NavBar extends React.Component{
     render(){
         return(
             <div>
-                <div className="row">
-                    <div className="col-md-12">
+               
+                    <div className="container-fluid" style={{"maxWidth": "100vw"}}>
                        
                             <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
                                 <Navbar.Brand href="/">QA Property</Navbar.Brand>
@@ -35,7 +35,7 @@ class NavBar extends React.Component{
                        
                     </div>
                 </div>
-            </div>
+            
         )  
     }
 }
