@@ -22,7 +22,8 @@ function Properties(){
 
     let [listOfProperties, dispatch] = useReducer(reducedPropertiesList, []);
     let [searchResult, setSearchResult] = useState([]);
-    let [propID, withdrawProperty] = useState([""])
+    let [propID, withdrawProperty] = useState([""]);
+
     const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
