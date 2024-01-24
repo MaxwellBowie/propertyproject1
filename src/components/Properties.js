@@ -130,8 +130,8 @@ function Properties(){
                           variant="success" onClick={handleShow}>
             <FontAwesomeIcon icon={faMagnifyingGlass} size="2x" /> Property Search
           </Button>
-
-          <Modal show={show} onHide={handleClose}>
+        {show }
+          <Modal show={show} onHide={handleClose} size="lg">
             <Modal.Header closeButton>
               <Modal.Title><h5 ><FontAwesomeIcon icon={faMagnifyingGlass}/>  Property Search</h5></Modal.Title>
             </Modal.Header>
