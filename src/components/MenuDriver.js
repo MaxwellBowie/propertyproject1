@@ -11,6 +11,8 @@ import AddProperty from "./AddProperty"
 import NavBar from "./NavBar"
 import PropertySearch from "./PropertySearch"
 import PropertyStatus from "./PropertyStatus"
+import Booking from "./Booking"
+
 
 function Routing(){
     return(
@@ -20,7 +22,7 @@ function Routing(){
         <br/>
         <div>
                 <Routes>
-                    <Route path="/" element={<Home/>}></Route>
+                    <Route path="/" element={<Properties/>}></Route>
                     <Route path="/sellers" element={<Sellers/>}></Route>
                     <Route path="/buyers" element={<Buyers/>}></Route>
                     <Route path="/properties" element={<Properties/>}></Route>
@@ -29,6 +31,7 @@ function Routing(){
                     <Route path="/addproperty" element={<AddProperty/>}></Route>
                     <Route path="/searchproperty" element={<PropertySearch/>}></Route>
                     <Route path="/propertyStatus" element={<PropertyStatus/>}></Route>
+                    <Route path="/bookings" element={<Booking/>}></Route>
                 </Routes>
         </div>
         </BrowserRouter>
