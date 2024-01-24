@@ -185,12 +185,28 @@ function Properties(){
                         <div>
                             <div className="card shadow-sm m-2" style={{"width" : "16rem"}}>
                             <div className="card-header bg-light text-dark"><b>
+                              { 
+                            post.status == "SOLD"  ?( 
+                       
+                              <img
+                              alt="Img"
+                             
+                              className="img-fluid object-cover"
+                              style={{filter : "grayscale(100)"}}
+                              src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                            />
+                            )
+                            
+                           :
+                            (
                                 <img
                 alt="Img"
                 id="img"
                 className="img-fluid object-cover"
                 src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              />{post.address},</b><br/>{post.postcode}</div>
+              />
+            )}
+              {post.address},</b><br/>{post.postcode}</div>
                                 <div className="card-body">
                                 <Link to={`/properties`} style={{"color": "#000000"}}
                     className="text-decoration-none " onClick={handleShow1}
