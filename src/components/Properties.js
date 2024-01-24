@@ -1,7 +1,8 @@
 import {useState, useEffect} from "react"
 import { useReducer } from 'react';
 import PropertySearch from "./PropertySearch";
-import {BrowserRouter,Routes,Route, Link} from "react-router-dom";
+import {BrowserRouter,Routes,Route, Link, useParams, useNavigate} from "react-router-dom";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -22,12 +23,18 @@ function Properties(){
 
     let [listOfProperties, dispatch] = useReducer(reducedPropertiesList, []);
     let [searchResult, setSearchResult] = useState([]);
+   
     let [propID, withdrawProperty] = useState([""]);
+
+    const navigate = useNavigate();
 
     const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const [show1, setShow1] = useState(false);
+  const handleClose1 = () => setShow1(false);
+  const handleShow1 = () => setShow1(true);
+  
     function handleSearch(searchInput){
         setSearchResult(
           listOfProperties.filter(
@@ -93,7 +100,7 @@ function Properties(){
         if(propID ==""){
             ref= fetch('http://localhost:3000/property')
             ref.then(done) 
-        }else{
+            }else{
 
             ref= fetch(`http://localhost:3000/property/${propID}`)
            
@@ -101,6 +108,7 @@ function Properties(){
                 ...ref,
                 status: "WITHDRAWN"
             };
+           
 
             console.log(property)
             
@@ -109,17 +117,31 @@ function Properties(){
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(property)
             })
-        }
-
+           
+          }
+         
         withdrawProperty("")
-   }
+
+     }
+     
+     
+     function handleCloseProperty() {
+        fetch(`http://localhost:3000/property}`, {
+          method: "GET",
+        }).then((response) => {
+          
+          setShow1(!show1);
+          navigate("/properties");
+      
+        });
+      }
+     
 
     function actvDel(ref){
         withdrawProperty(ref.target.id)
     }
 
     useEffect(()=>{sendRequest()}, [propID])
-
     return(
     <>
       <div className="button-container">
@@ -155,22 +177,52 @@ function Properties(){
             </div>
             <br></br>
             <br/>
-            <div class="row">
+            <div className="row">
                 {searchResult.map((post)=>(
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="d-flex justify-content-center">
+                <div className="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div className="d-flex justify-content-center">
                         <div>
-                            <div class="card shadow-sm m-2" style={{"width" : "16rem"}}>
-                            <div class="card-header bg-light text-dark"><b>{post.address},</b><br/>{post.postcode}</div>
-                                <div class="card-body">
-                                    <p class="card-text"><FontAwesomeIcon icon={setPropertyTypeIcon(post.type)}/> {post.type}</p>
-                                    <p class="card-text"><FontAwesomeIcon icon={faBed}/> {post.bedroom}</p>
-                                    <p class="card-text"><FontAwesomeIcon icon={faBath}/> {post.bathroom}</p>
-                                    <p class="card-text"><FontAwesomeIcon icon={faTree}/> {post.garden ? "Yes" : "No"}</p>
-                                    <p class="card-text"><span class={setBadgeColour(post.status)}>{post.status}</span></p>
+                            <div className="card shadow-sm m-2" style={{"width" : "16rem"}}>
+                            <div className="card-header bg-light text-dark"><b>{post.address},</b><br/>{post.postcode}</div>
+                                <div className="card-body">
+                                <Link to={`/properties`}
+                    className="text-decoration-none " onClick={handleShow1}
+                  >
+                                    <p className="card-text"><FontAwesomeIcon icon={setPropertyTypeIcon(post.type)}/> {post.type}</p>
+                                    <p className="card-text"><FontAwesomeIcon icon={faBed}/> {post.bedroom}</p>
+                                    <p className="card-text"><FontAwesomeIcon icon={faBath}/> {post.bathroom}</p>
+                                    <p classNamr="card-text"><FontAwesomeIcon icon={faTree}/> {post.garden ? "Yes" : "No"}</p>
+                                    <p className="card-text"><span class={setBadgeColour(post.status)}>{post.status}</span></p>
                                     {/* <p class="card-text"><input type="checkbox" id={post.id} onClick={actvDel} value="WITHDRAWN"></input></p> */}
+
+                                     <Modal show={show1} onHide={handleClose1}>
+            <Modal.Header>
+              <Modal.Title><h5 ><FontAwesomeIcon icon={faMagnifyingGlass}/>  Property {post.id}</h5></Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <div className="card shadow-sm m-2" style={{"width" : "16rem"}}>
+                            <div className="card-header bg-light text-dark"><b>{post.address},</b><br/>{post.postcode}</div>
+                                <div className="card-body">
+            <p className="card-text"><FontAwesomeIcon icon={setPropertyTypeIcon(post.type)}/> {post.type}</p>
+                                    <p className="card-text"><FontAwesomeIcon icon={faBed}/> {post.bedroom}</p>
+                                    <p className="card-text"><FontAwesomeIcon icon={faBath}/> {post.bathroom}</p>
+                                    <p className="card-text"><FontAwesomeIcon icon={faTree}/> {post.garden ? "Yes" : "No"}</p>
+                                    <p className="card-text"><span class={setBadgeColour(post.status)}>{post.status}</span></p>
+             </div></div>
+            </Modal.Body>
+            <Modal.Footer>
+            
+          <Button variant="secondary" onClick={handleCloseProperty}>
+            Close
+          </Button>
+        
+        </Modal.Footer>
+          </Modal>
+                                    </Link>
                                 </div>
                             <div class="card-footer bg-light text-dark"><b>£{post.price}</b><br/></div>
+                           
+
                         </div>
                         </div>
                     </div>
