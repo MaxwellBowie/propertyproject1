@@ -149,7 +149,7 @@ function Properties(){
         <Link to={"/properties"} className="text-decoration-none">
           {/* Bootstrap modal to search property */}
           <Button
-                          className="w-100"
+                          className="16rem"
                           variant="success" onClick={handleShow}>
             <FontAwesomeIcon icon={faMagnifyingGlass} size="2x" /> Property Search
           </Button>
@@ -192,7 +192,7 @@ function Properties(){
                 src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               />{post.address},</b><br/>{post.postcode}</div>
                                 <div className="card-body">
-                                <Link to={`/properties`}
+                                <Link to={`/properties`} style={{"color": "#000000"}}
                     className="text-decoration-none " onClick={handleShow1}
                   >
                                     <p className="card-text"><FontAwesomeIcon icon={setPropertyTypeIcon(post.type)}/> {post.type}</p>
