@@ -24,7 +24,7 @@ class NavBar extends React.Component{
                                     <Nav.Link href="/properties">Property</Nav.Link>
                                     <Nav.Link href="/sellers">Sellers</Nav.Link>
                                     <Nav.Link href="/buyers">Buyers</Nav.Link>
-                                    
+                                    <Nav.Link href="/bookings">Bookings</Nav.Link>
                                     </Nav>
                                     
                                 </Navbar.Collapse>
