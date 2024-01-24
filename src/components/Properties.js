@@ -67,6 +67,7 @@ function Properties(){
         }
     }
 
+
     function setPropertyTypeIcon(propertyType){
         let propertyIcon ={}
         switch(propertyType){
@@ -183,7 +184,13 @@ function Properties(){
                     <div className="d-flex justify-content-center">
                         <div>
                             <div className="card shadow-sm m-2" style={{"width" : "16rem"}}>
-                            <div className="card-header bg-light text-dark"><b>{post.address},</b><br/>{post.postcode}</div>
+                            <div className="card-header bg-light text-dark"><b>
+                                <img
+                alt="Img"
+                id="img"
+                className="img-fluid object-cover"
+                src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              />{post.address},</b><br/>{post.postcode}</div>
                                 <div className="card-body">
                                 <Link to={`/properties`}
                     className="text-decoration-none " onClick={handleShow1}
@@ -192,7 +199,8 @@ function Properties(){
                                     <p className="card-text"><FontAwesomeIcon icon={faBed}/> {post.bedroom}</p>
                                     <p className="card-text"><FontAwesomeIcon icon={faBath}/> {post.bathroom}</p>
                                     <p classNamr="card-text"><FontAwesomeIcon icon={faTree}/> {post.garden ? "Yes" : "No"}</p>
-                                    <p className="card-text"><span class={setBadgeColour(post.status)}>{post.status}</span></p>
+                                    <p className="card-text"><span class={setBadgeColour(post.status)}>
+                                    {post.status}</span></p>
                                     {/* <p class="card-text"><input type="checkbox" id={post.id} onClick={actvDel} value="WITHDRAWN"></input></p> */}
 
                                      <Modal show={show1} onHide={handleClose1}>
