@@ -47,10 +47,10 @@ function Sellers(){
 
     return(
         <>
-        <div  class="container"> <h2>Sellers</h2></div>
+        <div  class="container"> <h1>Sellers</h1></div>
             <div class="container bg-light p-3 rounded">
             <div class="card">
-                    <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPen}/> Add a Seller</h5>
+                    <h2 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPen}/> Add a Seller</h2>
                     <div class="card-body">
                         <div class="d-flex flex-row-reverse">
                             <Link to="/addseller"><button class="btn btn-success">Add Seller</button></Link>
@@ -61,7 +61,7 @@ function Sellers(){
         <div class="row">
             <div class="col align-self-center">
             <div class="card shadow-sm">
-            <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPeopleGroup}/> List of Sellers</h5>
+            <h2 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPeopleGroup}/> List of Sellers</h2>
                 <div class="card-body shadow-sm">
                 <div class="table-responsive">
                     <table class="table table-striped text-muted">
@@ -72,7 +72,7 @@ function Sellers(){
                                 <th><FontAwesomeIcon icon={faPhone}/> Phone</th>
                                 <th><FontAwesomeIcon icon={faLocationDot}/> Address</th>
                                 <th>Postcode</th>
-                                <th></th>
+                                <th>Remove</th>
                             </tr>
                         </thead>
                         <tbody>

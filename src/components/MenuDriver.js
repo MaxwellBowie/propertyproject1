@@ -15,9 +15,11 @@ import PropertyStatus from "./PropertyStatus"
 function Routing(){
     return(
         <>
+        <header role="banner"></header>
         <BrowserRouter>
         <NavBar/>
         <br/>
+        <main role="main">
         <div>
                 <Routes>
                     <Route path="/" element={<Home/>}></Route>
@@ -31,6 +33,7 @@ function Routing(){
                     <Route path="/propertyStatus" element={<PropertyStatus/>}></Route>
                 </Routes>
         </div>
+        </main>
         </BrowserRouter>
         </>
     )

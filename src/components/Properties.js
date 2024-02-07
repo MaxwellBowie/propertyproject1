@@ -38,7 +38,7 @@ function Properties(){
         let badgeColour = ""
         switch(badgeStatus){
             case "SOLD":
-                badgeColour = "badge bg-warning"
+                badgeColour = "badge bg-danger"
                 return badgeColour
             case "FOR SALE":
                 badgeColour = "badge bg-success"
@@ -114,10 +114,10 @@ function Properties(){
     return(
     <>
 
-    <div  class="container"><h2>Properties</h2></div>
+    <div  class="container"><h1>Properties</h1></div>
         <div class="container bg-light p-3 rounded">
             <div class="card">
-                    <h5 class="card-header bg-dark text-light"> <FontAwesomeIcon icon={faPen}/> Add a Property</h5>
+                    <h2 class="card-header bg-dark text-light"> <FontAwesomeIcon icon={faPen}/> Add a Property</h2>
                     <div class="card-body">
                         <div class="d-flex flex-row-reverse">
                             <Link to="/addproperty"><button class="btn btn-success">Add Property</button></Link>
@@ -126,7 +126,7 @@ function Properties(){
             </div>
             <br></br>
             <div class="card shadow-sm">
-                <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faMagnifyingGlass}/>  Property Search</h5>
+                <h2 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faMagnifyingGlass}/>  Property Search</h2>
                     <div class="card-body"><PropertySearch handleSearch = {handleSearch}/></div>
                 </div>
             <br/>

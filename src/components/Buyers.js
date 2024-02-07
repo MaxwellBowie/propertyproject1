@@ -46,10 +46,10 @@ function Buyers(){
 
     return(
         <>
-        <div  class="container"> <h2>Buyers</h2></div>
+        <div  class="container"> <h1>Buyers</h1></div>
             <div class="container bg-light p-3 rounded">
             <div class="card">
-                    <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPen}/> Add a Buyer</h5>
+                    <h2 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPen}/> Add a Buyer</h2>
                     <div class="card-body">
                         <div class="d-flex flex-row-reverse">
                             <Link to="/addbuyer"><button class="btn btn-success">Add Buyer</button></Link>
@@ -60,7 +60,7 @@ function Buyers(){
         <div class="row">
             <div class="col align-self-center">
             <div class="card shadow-sm">
-            <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPeopleGroup}/> List of Buyers</h5>
+            <h2 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPeopleGroup}/> List of Buyers</h2>
                 <div class="card-body shadow-sm">
                 <div class="table-responsive">
                     <table class="table table-striped text-muted">
@@ -71,7 +71,7 @@ function Buyers(){
                                 <th><FontAwesomeIcon icon={faPhone}/> Phone</th>
                                 <th><FontAwesomeIcon icon={faLocationDot}/> Address</th>
                                 <th>Postcode</th>
-                                <th></th>
+                                <th>Remove</th>
                             </tr>
                         </thead>
                         <tbody>
