@@ -34,12 +34,12 @@ function AddProperty(){
     }
     return(
         <>  
-        <div class="container"><h2>Properties</h2></div>
+        <div class="container"><h1>Properties</h1></div>
             <div class="container bg-light p-3 rounded">
                 <div class="row">
                     <div class="col">
                         <div class="card">
-                        <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPen}/> Add a Property</h5>
+                        <h2 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPen}/> Add a Property</h2>
                         <div class="card-body">
                         
                             <form>
@@ -53,7 +53,7 @@ function AddProperty(){
                             </div>
                             <div class="form-group">
                             <label for="inputType"><b>Type of Property:</b></label>
-                                <select id="type" class="form-select">
+                                <select aria-label="postcode" id="type" class="form-select">
                                     <option value="" selected disabled>Please select</option>
                                     <option value="DETACHED">DETACHED</option>
                                     <option value="SEMI">SEMI</option>
@@ -66,7 +66,7 @@ function AddProperty(){
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputBedrooms"><b>Number of Bedrooms:</b></label>
-                                <select id="bedroom" class="form-select">
+                                <select aria-label="bedroom" id="bedroom" class="form-select">
                                     <option value="" selected disabled>Please select</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -78,7 +78,7 @@ function AddProperty(){
 
                             <div class="form-group">
                                 <label for="exampleInputBathrooms"><b>Number of Batrooms:</b></label>
-                                <select id="bathroom" class="form-select">
+                                <select aria-label="bathrooms" id="bathroom" class="form-select">
                                     <option value="" selected disabled>Please select</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -89,7 +89,7 @@ function AddProperty(){
                         
                             <div class="form-group">
                                 <label for="inputGarden"><b>Does property have a Garden? :</b></label>
-                                <select id="garden" class="form-select">
+                                <select aria-label="garden" id="garden" class="form-select">
                                     <option value="" selected disabled>Please select</option>
                                     <option value="1">YES</option>
                                     <option value="0">NO</option> 
@@ -97,7 +97,7 @@ function AddProperty(){
                             </div>
                             <div class="form-group">
                                 <label for="inputStatus"><b>Status:</b></label>
-                                <select id="status" class="form-select">
+                                <select aria-label="status" id="status" class="form-select">
                                     <option value="" selected disabled>Please select</option>
                                     <option value="FOR SALE">FOR SALE</option>
                                     <option value="SOLD">SOLD</option> 

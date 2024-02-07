@@ -74,12 +74,12 @@ function AddSeller(){
 
     return(
         <>  
-        <div class="container"><h2>Sellers</h2></div>
+        <div class="container"><h1>Sellers</h1></div>
             <div class="container bg-light p-3 rounded">
                 <div class="row">
                     <div class="col">
                         <div class="card">
-                        <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPen}/> Add a Seller</h5>
+                        <h2 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPen}/> Add a Seller</h2>
                         <div class="card-body">
                         
                             <form>

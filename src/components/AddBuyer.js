@@ -32,12 +32,12 @@ function AddBuyer(){
 
     return(
         <>  
-        <div class="container"><h2>Buyers</h2></div>
+        <div class="container"><h1>Buyers</h1></div>
             <div class="container bg-light p-3 rounded">
                 <div class="row">
                     <div class="col">
                         <div class="card">
-                        <h5 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPen}/> Add a Buyer</h5>
+                        <h2 class="card-header bg-dark text-light"><FontAwesomeIcon icon={faPen}/> Add a Buyer</h2>
                         <div class="card-body">
                         
                             <form>
